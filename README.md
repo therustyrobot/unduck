@@ -55,4 +55,4 @@ See [PRIVACY.md](PRIVACY.md)
 
 ## License
 
-MIT
+GPL v3 — see [LICENSE](LICENSE)
