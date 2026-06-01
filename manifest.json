@@ -1,0 +1,26 @@
+{
+  "manifest_version": 3,
+  "name": "unduck",
+  "version": "0.1.0",
+  "description": "Jump from DuckDuckGo to Google with one click.",
+  "homepage_url": "https://github.com/therustyrobot/unduck",
+  "icons": {
+    "16": "icons/icon16.png",
+    "48": "icons/icon48.png",
+    "128": "icons/icon128.png"
+  },
+  "content_scripts": [
+    {
+      "matches": ["*://duckduckgo.com/*"],
+      "js": ["content.js"],
+      "css": ["content.css"],
+      "run_at": "document_idle"
+    }
+  ],
+  "browser_specific_settings": {
+    "gecko": {
+      "id": "{e0868668-c597-4625-8723-f25d6ab5d7af}",
+      "strict_min_version": "109.0"
+    }
+  }
+}

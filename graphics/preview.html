@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>unduck — Store Graphics Preview</title>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      background: #07070F;
+      color: #EEEEFF;
+      font-family: 'SF Pro Text', 'Helvetica Neue', system-ui, sans-serif;
+      padding: 60px 48px;
+      min-height: 100vh;
+    }
+
+    header {
+      margin-bottom: 64px;
+      border-bottom: 1px solid #141428;
+      padding-bottom: 32px;
+    }
+    header h1 {
+      font-size: 22px;
+      font-weight: 700;
+      color: #FFFFFF;
+      letter-spacing: -0.5px;
+      margin-bottom: 6px;
+    }
+    header p {
+      font-size: 14px;
+      color: #555580;
+    }
+
+    .asset {
+      margin-bottom: 72px;
+    }
+
+    .asset-meta {
+      display: flex;
+      align-items: baseline;
+      gap: 16px;
+      margin-bottom: 16px;
+    }
+    .asset-label {
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      color: #FF6600;
+    }
+    .asset-dims {
+      font-size: 12px;
+      color: #444468;
+      font-family: 'SF Mono', 'JetBrains Mono', monospace;
+    }
+    .asset-usage {
+      font-size: 12px;
+      color: #444468;
+    }
+
+    .asset-frame {
+      border: 1px solid #1A1A2C;
+      border-radius: 10px;
+      overflow: hidden;
+      display: inline-block;
+      max-width: 100%;
+    }
+    .asset-frame img {
+      display: block;
+      max-width: 100%;
+      height: auto;
+    }
+
+    .export-box {
+      margin-top: 14px;
+      background: #0D0D1A;
+      border: 1px solid #1A1A2C;
+      border-radius: 8px;
+      padding: 14px 18px;
+      font-size: 13px;
+      color: #7070A0;
+      line-height: 1.7;
+    }
+    .export-box strong { color: #AAAACC; font-weight: 600; }
+    .export-box code {
+      background: #131325;
+      border: 1px solid #1E1E30;
+      border-radius: 4px;
+      padding: 2px 6px;
+      font-family: 'SF Mono', 'JetBrains Mono', monospace;
+      font-size: 12px;
+      color: #FF8833;
+    }
+
+    .store-tags {
+      display: flex;
+      gap: 8px;
+      margin-top: 10px;
+      flex-wrap: wrap;
+    }
+    .store-tag {
+      background: #111120;
+      border: 1px solid #1E1E30;
+      border-radius: 100px;
+      padding: 4px 12px;
+      font-size: 11px;
+      color: #555580;
+    }
+
+    footer {
+      margin-top: 40px;
+      padding-top: 24px;
+      border-top: 1px solid #141428;
+      font-size: 12px;
+      color: #333355;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>unduck — Store Graphics</h1>
+    <p>Preview all assets. Export each to PNG for submission using the instructions below.</p>
+  </header>
+
+  <!-- ─── Hero Banner ─── -->
+  <section class="asset">
+    <div class="asset-meta">
+      <span class="asset-label">Hero Banner</span>
+      <span class="asset-dims">1280 × 400</span>
+      <span class="asset-usage">GitHub README · Social preview</span>
+    </div>
+    <div class="asset-frame">
+      <img src="hero.svg" width="1280" height="400" alt="unduck hero banner"/>
+    </div>
+    <div class="export-box">
+      <strong>Export to PNG:</strong>
+      <br/>Browser: open <code>hero.svg</code> directly, set DevTools viewport to 1280×400, screenshot.
+      <br/>CLI: <code>rsvg-convert -w 1280 -h 400 hero.svg &gt; hero.png</code>
+      <br/>Or: <code>npx svg-to-png hero.svg hero.png --width 1280 --height 400</code>
+    </div>
+    <div class="store-tags">
+      <span class="store-tag">GitHub README</span>
+      <span class="store-tag">GitHub Social Preview (1280×640 crop)</span>
+    </div>
+  </section>
+
+  <!-- ─── Promo Tile ─── -->
+  <section class="asset">
+    <div class="asset-meta">
+      <span class="asset-label">Promo Tile</span>
+      <span class="asset-dims">440 × 280</span>
+      <span class="asset-usage">Chrome Web Store small promotional tile</span>
+    </div>
+    <div class="asset-frame">
+      <img src="promo-tile.svg" width="440" height="280" alt="unduck promo tile"/>
+    </div>
+    <div class="export-box">
+      <strong>Export to PNG:</strong>
+      <br/>CLI: <code>rsvg-convert -w 440 -h 280 promo-tile.svg &gt; promo-tile.png</code>
+    </div>
+    <div class="store-tags">
+      <span class="store-tag">Chrome Web Store — Small promo tile (required)</span>
+    </div>
+  </section>
+
+  <!-- ─── Screenshot ─── -->
+  <section class="asset">
+    <div class="asset-meta">
+      <span class="asset-label">Screenshot</span>
+      <span class="asset-dims">1280 × 800</span>
+      <span class="asset-usage">Primary store screenshot — both Chrome &amp; Firefox</span>
+    </div>
+    <div class="asset-frame">
+      <img src="screenshot.svg" width="1280" height="800" alt="unduck screenshot"/>
+    </div>
+    <div class="export-box">
+      <strong>Export to PNG:</strong>
+      <br/>CLI: <code>rsvg-convert -w 1280 -h 800 screenshot.svg &gt; screenshot.png</code>
+      <br/>Or take a real screenshot of the extension in Chrome/Firefox for maximum authenticity.
+      <br/><strong>Tip:</strong> A real browser screenshot (with actual DDG UI) is preferred by store reviewers.
+    </div>
+    <div class="store-tags">
+      <span class="store-tag">Chrome Web Store — Screenshot (1280×800 PNG)</span>
+      <span class="store-tag">Firefox Add-ons — Screenshot</span>
+    </div>
+  </section>
+
+  <footer>
+    All assets use the SF Pro / Helvetica Neue font stack. Install <code>librsvg</code> via Homebrew (<code>brew install librsvg</code>) for CLI PNG export.
+  </footer>
+</body>
+</html>

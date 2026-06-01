@@ -1,0 +1,173 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="400" viewBox="0 0 1280 400">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1" gradientUnits="objectBoundingBox">
+      <stop offset="0%" stop-color="#080810"/>
+      <stop offset="100%" stop-color="#0E0E1C"/>
+    </linearGradient>
+    <radialGradient id="rightGlow" cx="78%" cy="50%" r="38%" gradientUnits="objectBoundingBox">
+      <stop offset="0%" stop-color="#FF6600" stop-opacity="0.14"/>
+      <stop offset="100%" stop-color="#FF6600" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="leftGlow" cx="25%" cy="52%" r="32%" gradientUnits="objectBoundingBox">
+      <stop offset="0%" stop-color="#FF6600" stop-opacity="0.05"/>
+      <stop offset="100%" stop-color="#FF6600" stop-opacity="0"/>
+    </radialGradient>
+    <pattern id="dots" x="0" y="0" width="24" height="24" patternUnits="userSpaceOnUse">
+      <circle cx="12" cy="12" r="1" fill="#FFFFFF" fill-opacity="0.022"/>
+    </pattern>
+    <filter id="winShadow" x="-8%" y="-8%" width="120%" height="130%">
+      <feDropShadow dx="0" dy="20" stdDeviation="32" flood-color="#000000" flood-opacity="0.65"/>
+    </filter>
+    <filter id="btnGlow" x="-30%" y="-60%" width="160%" height="220%">
+      <feGaussianBlur stdDeviation="5" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+    <clipPath id="winClip">
+      <rect width="582" height="344" rx="12"/>
+    </clipPath>
+  </defs>
+
+  <!-- Background -->
+  <rect width="1280" height="400" fill="url(#bg)"/>
+  <rect width="1280" height="400" fill="url(#rightGlow)"/>
+  <rect width="1280" height="400" fill="url(#leftGlow)"/>
+  <rect width="1280" height="400" fill="url(#dots)"/>
+
+  <!-- Thin bottom edge line -->
+  <line x1="0" y1="399.5" x2="1280" y2="399.5" stroke="#1A1A2A" stroke-width="1"/>
+
+  <!-- ═══════════════ LEFT PANEL ═══════════════ -->
+
+  <!-- Duck icon (facing right, orange, ~80×74 at scale 2) -->
+  <!-- Body: cx=14,cy=5 rx=22,ry=14 | Head: cx=0,cy=-8 r=11 | overlap at left of body -->
+  <g transform="translate(100, 182) scale(2.05)">
+    <!-- Body -->
+    <ellipse cx="14" cy="5" rx="22" ry="14" fill="#FF6600"/>
+    <!-- Head (overlaps body's upper-left) -->
+    <circle cx="0" cy="-8" r="11" fill="#FF6600"/>
+    <!-- Bill -->
+    <path d="M 9,-10 L 25,-7.5 L 9,-5 Z" fill="#FFAA33"/>
+    <!-- Eye white -->
+    <circle cx="-4" cy="-11" r="3" fill="white"/>
+    <!-- Eye pupil -->
+    <circle cx="-3.5" cy="-11.5" r="1.5" fill="#08080E"/>
+    <!-- Tail (upper-left of body) -->
+    <path d="M -7,3 C -16,-1 -17,-13 -11,-16 C -9,-10 -7,-2 -7,3 Z" fill="#CC4D00"/>
+    <!-- Wing detail -->
+    <ellipse cx="14" cy="4" rx="13" ry="7" fill="#CC4D00" opacity="0.65"/>
+  </g>
+
+  <!-- "unduck" wordmark -->
+  <text x="262" y="206"
+        font-family="'SF Pro Display','Helvetica Neue','Segoe UI',Helvetica,Arial,sans-serif"
+        font-size="78" font-weight="800" fill="#FFFFFF" letter-spacing="-3">unduck</text>
+
+  <!-- Tagline -->
+  <text x="100" y="250"
+        font-family="'SF Pro Text','Helvetica Neue','Segoe UI',Helvetica,Arial,sans-serif"
+        font-size="20" fill="#7070A0" font-weight="400">
+    Jump from DuckDuckGo to Google in one click.
+  </text>
+
+  <!-- Feature pills -->
+  <rect x="100" y="276" width="148" height="28" rx="14" fill="#111120" stroke="#222238" stroke-width="1"/>
+  <text x="174" y="294" text-anchor="middle"
+        font-family="'SF Pro Text','Helvetica Neue',sans-serif" font-size="12" fill="#7070A0">
+    No permissions
+  </text>
+
+  <rect x="258" y="276" width="116" height="28" rx="14" fill="#111120" stroke="#222238" stroke-width="1"/>
+  <text x="316" y="294" text-anchor="middle"
+        font-family="'SF Pro Text','Helvetica Neue',sans-serif" font-size="12" fill="#7070A0">
+    Dark mode
+  </text>
+
+  <rect x="384" y="276" width="122" height="28" rx="14" fill="#111120" stroke="#222238" stroke-width="1"/>
+  <text x="445" y="294" text-anchor="middle"
+        font-family="'SF Pro Text','Helvetica Neue',sans-serif" font-size="12" fill="#7070A0">
+    Tab-aware
+  </text>
+
+  <!-- Platform line -->
+  <text x="100" y="340"
+        font-family="'SF Pro Text','Helvetica Neue',sans-serif"
+        font-size="14" fill="#404068">
+    Chrome · Firefox
+  </text>
+
+  <!-- ═══════════════ RIGHT PANEL: Browser Mockup ═══════════════ -->
+  <g transform="translate(666, 28)" filter="url(#winShadow)">
+    <!-- Window base -->
+    <rect width="582" height="344" rx="12" fill="#111120" stroke="#1E1E30" stroke-width="1"/>
+
+    <g clip-path="url(#winClip)">
+      <!-- ─── Title bar ─── -->
+      <rect width="582" height="44" fill="#1C1C2C"/>
+      <!-- Traffic lights -->
+      <circle cx="26" cy="22" r="7" fill="#FF5F57"/>
+      <circle cx="48" cy="22" r="7" fill="#FFBD2E"/>
+      <circle cx="70" cy="22" r="7" fill="#27C840"/>
+      <!-- Address bar -->
+      <rect x="98" y="10" width="352" height="24" rx="12" fill="#0C0C18"/>
+      <text x="274" y="26" text-anchor="middle"
+            font-family="'SF Mono','JetBrains Mono',monospace" font-size="10.5" fill="#404068">
+        duckduckgo.com/?q=best+pizza+near+me
+      </text>
+
+      <!-- ─── DDG Page ─── -->
+      <!-- Header background -->
+      <rect y="44" width="582" height="66" fill="#161624"/>
+      <!-- DDG wordmark -->
+      <text x="20" y="83"
+            font-family="'SF Pro Display','Helvetica Neue',sans-serif"
+            font-size="20" font-weight="700" fill="#DE5833">DuckDuckGo</text>
+      <!-- Search bar -->
+      <rect x="156" y="56" width="238" height="34" rx="17" fill="#1E1E30" stroke="#2A2A40" stroke-width="1"/>
+      <text x="172" y="78"
+            font-family="'SF Pro Text','Helvetica Neue',sans-serif"
+            font-size="13" fill="#BBBBD8">best pizza near me</text>
+
+      <!-- ★ THE BUTTON ★ — orange glow behind -->
+      <rect x="402" y="56" width="160" height="34" rx="7" fill="#FF6600" filter="url(#btnGlow)" opacity="0.35"/>
+      <!-- Button face -->
+      <rect x="402" y="56" width="160" height="34" rx="7" fill="#FF6600"/>
+      <text x="482" y="78" text-anchor="middle"
+            font-family="'SF Pro Text','Helvetica Neue',sans-serif"
+            font-size="13" font-weight="600" fill="#FFFFFF">Search Google</text>
+
+      <!-- ─── Nav tabs ─── -->
+      <rect y="110" width="582" height="1" fill="#1E1E30"/>
+      <rect y="111" width="582" height="32" fill="#0F0F1C"/>
+      <text x="20" y="131" font-family="'SF Pro Text','Helvetica Neue',sans-serif" font-size="12" fill="#EEEEFF" font-weight="600">Web</text>
+      <rect x="20" y="141" width="22" height="2" rx="1" fill="#FF6600"/>
+      <text x="56" y="131" font-family="'SF Pro Text','Helvetica Neue',sans-serif" font-size="12" fill="#44446A">Images</text>
+      <text x="106" y="131" font-family="'SF Pro Text','Helvetica Neue',sans-serif" font-size="12" fill="#44446A">Videos</text>
+      <text x="158" y="131" font-family="'SF Pro Text','Helvetica Neue',sans-serif" font-size="12" fill="#44446A">News</text>
+      <rect y="143" width="582" height="1" fill="#1A1A28"/>
+
+      <!-- ─── Results area ─── -->
+      <rect y="144" width="582" height="200" fill="#0C0C18"/>
+
+      <!-- Result 1 -->
+      <text x="20" y="168" font-family="'SF Mono','JetBrains Mono',monospace" font-size="10" fill="#44446A">pizzahut.com › find-a-pizza</text>
+      <rect x="20" y="174" width="280" height="13" rx="3" fill="#1C1C2E"/>
+      <rect x="20" y="193" width="340" height="8" rx="3" fill="#161624"/>
+      <rect x="20" y="207" width="300" height="8" rx="3" fill="#161624"/>
+
+      <!-- Result 2 -->
+      <text x="20" y="231" font-family="'SF Mono','JetBrains Mono',monospace" font-size="10" fill="#44446A">yelp.com › pizza-near-me</text>
+      <rect x="20" y="237" width="260" height="13" rx="3" fill="#1C1C2E"/>
+      <rect x="20" y="256" width="320" height="8" rx="3" fill="#161624"/>
+      <rect x="20" y="270" width="280" height="8" rx="3" fill="#161624"/>
+
+      <!-- Result 3 -->
+      <text x="20" y="294" font-family="'SF Mono','JetBrains Mono',monospace" font-size="10" fill="#44446A">tripadvisor.com › restaurants</text>
+      <rect x="20" y="300" width="290" height="13" rx="3" fill="#1C1C2E"/>
+      <rect x="20" y="319" width="250" height="8" rx="3" fill="#161624"/>
+      <rect x="20" y="333" width="305" height="8" rx="3" fill="#161624"/>
+    </g>
+  </g>
+</svg>

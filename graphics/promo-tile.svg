@@ -1,0 +1,61 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="440" height="280" viewBox="0 0 440 280">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="0.6" y2="1" gradientUnits="objectBoundingBox">
+      <stop offset="0%" stop-color="#09090F"/>
+      <stop offset="100%" stop-color="#0D0D1A"/>
+    </linearGradient>
+    <radialGradient id="glow" cx="50%" cy="40%" r="55%" gradientUnits="objectBoundingBox">
+      <stop offset="0%" stop-color="#FF6600" stop-opacity="0.16"/>
+      <stop offset="100%" stop-color="#FF6600" stop-opacity="0"/>
+    </radialGradient>
+    <pattern id="dots" x="0" y="0" width="20" height="20" patternUnits="userSpaceOnUse">
+      <circle cx="10" cy="10" r="1" fill="#FFFFFF" fill-opacity="0.025"/>
+    </pattern>
+  </defs>
+
+  <!-- Background -->
+  <rect width="440" height="280" fill="url(#bg)"/>
+  <rect width="440" height="280" fill="url(#glow)"/>
+  <rect width="440" height="280" fill="url(#dots)"/>
+
+  <!-- Duck icon — centered, larger -->
+  <g transform="translate(220, 80) scale(2.6)">
+    <ellipse cx="14" cy="5" rx="22" ry="14" fill="#FF6600"/>
+    <circle cx="0" cy="-8" r="11" fill="#FF6600"/>
+    <path d="M 9,-10 L 25,-7.5 L 9,-5 Z" fill="#FFAA33"/>
+    <circle cx="-4" cy="-11" r="3" fill="white"/>
+    <circle cx="-3.5" cy="-11.5" r="1.5" fill="#08080E"/>
+    <path d="M -7,3 C -16,-1 -17,-13 -11,-16 C -9,-10 -7,-2 -7,3 Z" fill="#CC4D00"/>
+    <ellipse cx="14" cy="4" rx="13" ry="7" fill="#CC4D00" opacity="0.65"/>
+  </g>
+
+  <!-- Wordmark -->
+  <text x="220" y="165" text-anchor="middle"
+        font-family="'SF Pro Display','Helvetica Neue','Segoe UI',Helvetica,Arial,sans-serif"
+        font-size="54" font-weight="800" fill="#FFFFFF" letter-spacing="-2">unduck</text>
+
+  <!-- Tagline -->
+  <text x="220" y="193" text-anchor="middle"
+        font-family="'SF Pro Text','Helvetica Neue',sans-serif"
+        font-size="15" fill="#666690" font-weight="400">
+    One click from DuckDuckGo to Google.
+  </text>
+
+  <!-- Separator -->
+  <line x1="160" y1="220" x2="280" y2="220" stroke="#1E1E2E" stroke-width="1"/>
+
+  <!-- Platform badges row -->
+  <!-- Chrome badge -->
+  <rect x="88" y="234" width="116" height="26" rx="13" fill="#111120" stroke="#1E1E30" stroke-width="1"/>
+  <text x="146" y="251" text-anchor="middle"
+        font-family="'SF Pro Text','Helvetica Neue',sans-serif" font-size="12" fill="#666688">
+    Chrome
+  </text>
+
+  <!-- Firefox badge -->
+  <rect x="236" y="234" width="116" height="26" rx="13" fill="#111120" stroke="#1E1E30" stroke-width="1"/>
+  <text x="294" y="251" text-anchor="middle"
+        font-family="'SF Pro Text','Helvetica Neue',sans-serif" font-size="12" fill="#666688">
+    Firefox
+  </text>
+</svg>

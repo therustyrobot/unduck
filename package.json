@@ -1,0 +1,17 @@
+{
+  "name": "unduck",
+  "version": "0.1.0",
+  "description": "Jump from DuckDuckGo to Google with one click.",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "test": "node --test tests/**/*.test.js",
+    "start": "web-ext run",
+    "build:firefox": "web-ext build --overwrite-dest --ignore-files tests scripts .gsd .agents .planning .bg-shell AGENTS.md skills-lock.json package.json package-lock.json url-builder.js store-assets graphics README.md PRIVACY.md .gitignore",
+    "build:chrome": "zip -j unduck-chrome.zip manifest.json content.js content.css && zip unduck-chrome.zip icons/icon16.png icons/icon48.png icons/icon128.png",
+    "lint": "web-ext lint"
+  },
+  "devDependencies": {
+    "web-ext": "^10.2.0"
+  }
+}
