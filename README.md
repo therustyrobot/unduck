@@ -1,5 +1,7 @@
 # unduck
 
+![unduck logo](unduck-logo.svg)
+
 A browser extension for Chrome and Firefox that adds a **"Search Google"** button next to the DuckDuckGo search bar. One click sends your current query to Google in the same tab — no copy-pasting, no new tabs.
 
 - [Chrome Web Store](#) *(link once published)*
